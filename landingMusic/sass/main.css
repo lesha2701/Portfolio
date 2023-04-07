@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "buch";
+  src: url("../fonts/test-soehne-breit-buch.woff2");
+}
+@font-face {
+  font-family: "dreiviertelfett";
+  src: url("../fonts/test-soehne-breit-dreiviertelfett.woff2");
+}
+@font-face {
+  font-family: "fett";
+  src: url("../fonts/test-soehne-breit-fett.woff2");
+}
+@font-face {
+  font-family: "halbfett";
+  src: url("../fonts/test-soehne-breit-halbfett.woff2");
+}
+@font-face {
+  font-family: "kraftig";
+  src: url("../fonts/test-soehne-breit-kraftig.woff2");
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "buch";
+}
+
+.container {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+.header {
+  margin: 41px 0 121px;
+}
+
+.header__inner {
+  padding: 0 80px;
+  display: flex;
+  align-items: center;
+}
+
+.header__logo {
+  margin-right: 80px;
+}
+
+.header__nav-items {
+  display: flex;
+  margin: 0;
+  list-style: none;
+  text-transform: uppercase;
+  gap: 33px;
+}
+
+.header__nav-link {
+  font-size: 10px;
+  line-height: 12px;
+  color: #272727;
+  text-decoration: none;
+}/*# sourceMappingURL=main.css.map */
