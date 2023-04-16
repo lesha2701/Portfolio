@@ -1,9 +1,9 @@
 <script setup>
-  import btnComponent from './components/btnComponent.vue';
+  import textComponent from './components/textComponent.vue';
 </script>
 
 <template>
-  <btnComponent />
+  <textComponent />
 </template>
 
 <style scoped>
