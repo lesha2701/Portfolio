@@ -2,13 +2,15 @@
     <h2 class="title">Узнай погоду в любом городе</h2><br/>
     <div>
         <input v-model="city" type="text" class="text" placeholder="Город...">
-        <button v-if="canSee" @click="getWeatherData" class="btn"><span>Узнать погоду</span></button>
+        <button v-if="canSee" @click.stop="getWeatherData();seeWeather()" class="btn"><span>Узнать погоду</span></button>
         <weatherComponent 
         :city="this.city"
-        :temp="this.temp.toFixed(1)"
-        :feelsLike="this.feelsLike.toFixed(1)"
+        :temp="this.temp"
+        :feelsLike="this.feelsLike"
         :humidity="this.humidity"
-        v-if="temp"
+        :cloudines="this.cloudines"
+        v-show="temp !== null"
+        class="weather"
         />
     </div>
 </template>
@@ -29,7 +31,8 @@ export default {
             canAnimation: 0,
             temp: null,
             feelsLike: null,
-            humidity: null
+            humidity: null,
+            cloudines: null
         }
     },
     computed: {
@@ -63,12 +66,35 @@ export default {
         async getWeatherData() {
             const apiKey = '798d7ec6a2d1c7d510730b228d3c8a95';
             const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=${apiKey}`)
-            this.temp = response.data.main.temp - 273
-            this.feelsLike = response.data.main.feels_like - 273
+            this.temp = (response.data.main.temp - 273).toFixed(1)
+            this.feelsLike = (response.data.main.feels_like - 273).toFixed(1)
             this.humidity = response.data.main.humidity
+            this.cloudines = response.data.clouds.all
         },
         seeWeather() {
-            console.log('123')
+            const tl = gsap.timeline()
+
+            tl
+            .to('.title', {
+                y: -100,
+                opacity: 0,
+                duration: 1,
+                ease: "easeInOut"
+            })
+            .to('.text', {
+                x: -100,
+                opacity: 0,
+                ease: "easeInOut"
+            }, '-=1')
+            .to('.btn', {
+                x: 100,
+                opacity: 0,
+                ease: "easeInOut"
+            }, '-=1')
+            .from('.weather', {
+                opacity: 0,
+                duration: 1  
+            })
         }
     }
 }
@@ -130,6 +156,14 @@ export default {
 
     .btn:hover span {
         color: #232323;
+    }
+
+    .weather {
+        position: absolute;
+        top: -50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 200px;
     }
 
 </style>
