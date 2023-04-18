@@ -32,7 +32,7 @@ export default {
             temp: null,
             feelsLike: null,
             humidity: null,
-            cloudines: null
+            cloudines: null,
         }
     },
     computed: {
