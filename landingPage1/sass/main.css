@@ -41,4 +41,58 @@ body {
   font-size: 14px;
   line-height: 22px;
   text-decoration: none;
+}
+
+.coffee {
+  display: flex;
+}
+
+.mainImgBlock {
+  border: 1px solid #000000;
+  border-top: none;
+}
+
+.coffee__scroll {
+  padding: 15px 0;
+  border: 1px solid #000000;
+  border-top: none;
+}
+
+.coffee__scroll-block {
+  display: flex;
+  gap: 30px;
+}
+
+.coffee__scroll-block--text {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 17px;
+  line-height: 26px;
+}
+
+.photoLeft {
+  padding: 19px 21px;
+  border: 1px solid #000000;
+  border-top: none;
+}
+
+.coffee__title {
+  width: 545px;
+  padding: 24px 97px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 58px;
+  line-height: 65px;
+  text-align: center;
+  border: 1px solid #000000;
+  border-top: none;
+  border-left: none;
+  margin: 0;
+}
+
+.photoRight {
+  padding: 22.5px 41.5px;
+  border: 1px solid #000000;
+  border-top: none;
+  border-left: none;
 }/*# sourceMappingURL=main.css.map */
