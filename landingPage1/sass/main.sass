@@ -40,10 +40,23 @@ body
 
 .coffee
     display: grid
-    grid-template-columns: 1fr 1fr
-    justify-items: center
+    grid-template-columns: repeat(2, 1fr)
+    border: 1px solid #000
+    border-top: none
 
-.coffee__left
-    display: grid
+.coffee__left 
+    border-right: 1px solid #000
 
+.mainImgBlock
+    box-sizing: border-box
+    border-bottom: 1px solid #000
 
+.mainImg
+    width: 100%
+    height: 100%
+
+.coffee__scroll-block
+    display: flex
+    
+
+    
