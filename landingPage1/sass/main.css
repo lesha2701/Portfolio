@@ -4,6 +4,10 @@ body {
   min-height: 100vh;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
 .container {
   max-width: 1440px;
   margin: 0 auto;
@@ -43,6 +47,10 @@ body {
   text-decoration: none;
 }
 
+.main {
+  margin-bottom: 100px;
+}
+
 .coffee {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -66,4 +74,135 @@ body {
 
 .coffee__scroll-block {
   display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 22px 0;
+  border-bottom: 1px solid #000;
+}
+
+.coffee__scroll-block--text {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 17px;
+  line-height: 26px;
+}
+
+.photoLeft-block {
+  padding: 19px 21px;
+}
+
+.photoLeft {
+  width: 100%;
+  height: 100%;
+}
+
+.coffee__right {
+  text-align: center;
+}
+
+.coffe__title-block {
+  border-bottom: 1px solid #000;
+}
+
+.coffee__title {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 24px auto 11px;
+  width: 536px;
+  font-size: 58px;
+  line-height: 65px;
+  font-weight: 400;
+}
+
+.photoRight-block {
+  padding: 18px;
+}
+
+.photoRight {
+  width: 100%;
+  height: 100%;
+}
+
+.lava {
+  border: 1px solid #000;
+  border-top: none;
+}
+
+.lava__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 30px;
+  border-bottom: 1px solid #000;
+}
+
+.lava__title-text {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+  font-size: 65px;
+  line-height: 63px;
+  width: 785px;
+  font-weight: 400;
+}
+
+.lava__catalog {
+  position: relative;
+  padding: 0 20px;
+}
+
+.lava__catalog-icons {
+  position: absolute;
+  width: 97%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: -1;
+}
+
+.iconLeft {
+  position: relative;
+  left: -19px;
+}
+
+.iconRight {
+  position: relative;
+  left: 19px;
+}
+
+.lava__catalog-cards {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.card {
+  min-height: 658px;
+  max-width: 436px;
+  background-image: url("../image/Vector.png");
+  box-sizing: border-box;
+  text-align: center;
+  padding: 23px 23px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.card-title {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 32px;
+  line-height: 38px;
+  font-weight: 400;
+  margin: 14px 0;
+}
+
+.card-text {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 18px;
+  line-height: 28px;
 }/*# sourceMappingURL=main.css.map */
