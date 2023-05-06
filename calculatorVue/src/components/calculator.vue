@@ -4,6 +4,7 @@
             <p class="calculatorMode-title">Operation mode:</p>
             <div class="mode">
                 <a class="modeBtn modeClassic" @click="showClassic">Classic</a>
+                <a class="modeBtn modeBonus" @click="showTrigonometry">Trigonometry</a>
                 <a class="modeBtn modeBonus" @click="showBonus">Bonus</a>
             </div>
         </div>
@@ -16,13 +17,20 @@
             </div>
             <div class="calculatorBtns operationsItems">
                 <a 
-                v-if="oper1"
-                @click="addNumbers(operation)"
-                class="calculatorBtn-item operationItem" v-for="operation in operations" href="#">{{ operation }}</a>
+                    v-if="oper == 'classic'"
+                    @click="addNumbers(operation)"
+                    class="calculatorBtn-item operationItem" v-for="operation in operations" href="#">{{ operation }}
+                </a>
                 <a 
-                v-else
-                @click="addNumbers(operation)"
-                class="calculatorBtn-item operationItem" v-for="operation in operations2" href="#">{{ operation }}</a>
+                    v-else-if="oper == 'bonus'"
+                    @click="addNumbers(operation)"
+                    class="calculatorBtn-item operationItem" v-for="operation in operations2" href="#">{{ operation }}
+                </a>
+                <a 
+                    v-else-if="oper == 'trigonometry'"
+                    @click="addNumbers(operation)"
+                    class="calculatorBtn-item operationItem" v-for="operation in operations3" href="#">{{ operation }}
+                </a>
             </div>     
         </div>
         <div class="calculatorBtns">
@@ -34,21 +42,24 @@
 </template>
 
 <script>
+    import { evaluate } from 'mathjs';
+    
     export default {
         data() {
             return {
                 result: '',
                 numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, '.', '00'],
                 operations: ['+', '-', '*', '/'],
-                operations2: ['%', '//', '^', 'log'],
-                updates: ['=', '<=', 'clear'],
-                oper1: true,
+                operations2: ['%', '^', 'sqrt'],
+                operations3: ['sin', 'cos', 'tan', 'cot'],
+                updates: ['=', '<=', 'clear', '(', ')', 'deg'],
+                oper: 'classic',
             }
         },
         methods: {
             addNumbers(number) {
                 if (number == '=') {
-                    this.getResult(operation)
+                    this.getResult()
                 } else if (number == '<=') {
                     this.result = this.result.slice(0, -1)
                 } else if (number == 'clear') {
@@ -58,15 +69,19 @@
                     this.result += number
                 }
             },
-            getResult(operation) {
-                this.result = eval(this.result).toString()
+            getResult() {
+                this.result = evaluate(this.result).toString()
             },
             showClassic() {
-                this.oper1 = true
+                this.oper = 'classic'
             },
             showBonus() {
-                this.oper1 = false
+                this.oper = 'bonus'
+            },
+            showTrigonometry() {
+                this.oper = 'trigonometry'
             }
+
         }
     }
 </script>
@@ -75,7 +90,7 @@
     .calculatorInput {
         border: 1px solid #aaa;
         background-color: transparent;
-        padding: 10px;
+        padding: 12px;
         outline: none;
         font-size: 32px;
     }
