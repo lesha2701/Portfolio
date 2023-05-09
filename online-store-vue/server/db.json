@@ -1,0 +1,46 @@
+{
+  "product": [
+    {
+      "id": 0,
+      "name": "T-shirt",
+      "price": 799
+    },
+    {
+      "id": 1,
+      "name": "T-shirt",
+      "price": 799
+    },
+    {
+      "id": 2,
+      "name": "T-shirt",
+      "price": 799
+    },
+    {
+      "id": 3,
+      "name": "T-shirt",
+      "price": 799
+    },
+    {
+      "id": 125,
+      "name": "Шорты",
+      "price": "1200"
+    },
+    {
+      "id": 135,
+      "name": "Штаны",
+      "price": "1299"
+    },
+    {
+      "id": 145,
+      "name": "Куртка",
+      "price": "3900"
+    }
+  ],
+  "carts": [
+    {
+      "id": 3,
+      "name": "T-shirt",
+      "price": 799
+    }
+  ]
+}
