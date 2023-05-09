@@ -1,19 +1,25 @@
 <template>
-  <ul>
-    <li v-for="product in products" :key="product.id">
-      <p>{{ product.name }}</p>
-      <p>{{ product.price }}</p>
-    </li>
-  </ul>
-  <input type="text" v-model="name">
-  <input type="text" v-model="price">
-  <a href="#" @click="addData">Добавить</a>
+  <headerComponent />
+  <div class="container">
+    <div class="catalog">
+      <filterComponent />
+      <catalogComponent />
+    </div>
+  </div>
 </template>
 
 <script>
 import axios from 'axios'
+import headerComponent from './components/headerComponent.vue'
+import filterComponent from './components/filterCompopnent.vue'
+import catalogComponent from './components/catalogComponent.vue'
 
 export default {
+  components: {
+    headerComponent,
+    filterComponent,
+    catalogComponent
+  },
   data() {
     return {
       products: [],
@@ -28,50 +34,31 @@ export default {
     .then((response) => {
       this.products = response.data
     })
-  },
-  methods: {
-    addData() {
-      axios
-      .post('http://localhost:3001/product', {
-        id: this.id,
-        name: this.name,
-        price: this.price
-      })
-      .then(
-        this.addId(),
-        axios
-        .get('http://localhost:3001/product')
-        .then((response) => {
-          this.products = response.data
-      })
-      );
-    },
-    addId() {
-      this.id += 1
-    }
   }
 }
 </script>
 
 <style>
+body {
+  margin: 0;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+  margin: 0;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  font-family: 'Inter', sans-serif;
+  max-width: 1920px;
+  margin: 0 auto;
+  color: #5A5B6A;
 }
 
-nav {
-  padding: 30px;
+.container {
+  padding: 30px 213px;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+.catalog {
+  display: flex;
 }
 </style>

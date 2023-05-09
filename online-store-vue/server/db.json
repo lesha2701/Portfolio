@@ -2,45 +2,33 @@
   "product": [
     {
       "id": 0,
-      "name": "T-shirt",
-      "price": 799
+      "image": "/Image.png",
+      "name": "Vintage Typewriter to post awesome stories about UI design and webdev.",
+      "price": 49.50,
+      "descr": "Eligible for Shipping To Mars or somewhere else"
     },
     {
       "id": 1,
-      "name": "T-shirt",
-      "price": 799
+      "image": "/Image1.png",
+      "name": "Lee Pucker design. Leather botinki for handsome designers. Free shipping.",
+      "price": 13.95,
+      "descr": "1258 bids, 359 watchers $5.95 for shipping"
     },
     {
       "id": 2,
-      "name": "T-shirt",
-      "price": 799
+      "image": "/Image2.png",
+      "name": "Timesaving kitten to save months on development. Playful, cute, cheap!",
+      "price": 799,
+      "descr": "Eligible for nothing :("
     },
     {
       "id": 3,
-      "name": "T-shirt",
-      "price": 799
-    },
-    {
-      "id": 125,
-      "name": "Шорты",
-      "price": "1200"
-    },
-    {
-      "id": 135,
-      "name": "Штаны",
-      "price": "1299"
-    },
-    {
-      "id": 145,
-      "name": "Куртка",
-      "price": "3900"
+      "image": "/Image3.png",
+      "name": "Plastic useless plugs and tubes for high-fidelity prototyping. Fit & Eat!",
+      "price": 14.48,
+      "descr": "Wordwide shitting available Buyers protection possible!"
     }
   ],
   "carts": [
-    {
-      "id": 3,
-      "name": "T-shirt",
-      "price": 799
-    }
   ]
 }
