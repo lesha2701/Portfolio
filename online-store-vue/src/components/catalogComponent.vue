@@ -48,11 +48,12 @@ export default {
 }
 
 .products__items {
+    box-sizing: border-box;
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    justify-content: space-around;
     padding: 0;
-    padding: 16px;
+    row-gap: 20px;
 }
 </style>

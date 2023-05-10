@@ -10,7 +10,7 @@
 
 <style>
     .aside {
-        width: 355px;
+        min-width: 355px;
         margin-right: 24px;
         border: 1px solid #000;
     }

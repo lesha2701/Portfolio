@@ -4,11 +4,12 @@
         <p class="card__name">{{ name }}</p>
         <p class="card__price">${{ price }}</p>
         <p class="card__descr">{{ descr }}</p>
-        <a href="#" class="card__btn">Add in cart</a>
+        <a href="#" class="card__btn" @click="addInCart">Add in cart</a>
     </article>
 </template>
 
 <script>
+import axios from 'axios'
     export default {
         props: [
             'id',
@@ -16,7 +17,33 @@
             'name',
             'price',
             'descr'
-        ]
+        ],
+        methods: {
+            addInCart() {
+                this.checkId(this.id);
+                axios
+                .post('http://localhost:3001/carts', {
+                    id: this.id,
+                    image: this.image,
+                    name: this.name,
+                    price: this.price,
+                    descr: this.descr
+                })
+            }, 
+            checkId(id) {
+                let cartItems = []
+                axios
+                .get('http://localhost:3001/carts')
+                .then((response) => {
+                    cartItems = response.data
+                    console.log(cartItems, id)
+                    cartItems.find(function(element) {
+                        console.log(element.id === id)
+                        return element.id === id
+                    })  
+                })
+            }
+        }
     }
 </script>
 
@@ -27,6 +54,7 @@
 
 .card__name {
     width: 227px;
+    height: 74px;
     font-size: 16px;
     line-height: 150%;
     letter-spacing: 0.0275em;
@@ -66,7 +94,7 @@
     text-align: center;
 }
 
-@media screen and (max-width: 1919px) {
+/* @media screen and (max-width: 1919px) {
     .card__name {
         width: 270px;
     }
@@ -93,5 +121,5 @@
     .card__descr {
         width: 180px;
     }
-}
+} */
 </style>
