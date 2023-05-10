@@ -64,13 +64,6 @@
       "name": "Vintage Typewriter to post awesome stories about UI design and webdev.",
       "price": 49.5,
       "descr": "Eligible for Shipping To Mars or somewhere else"
-    },
-    {
-      "id": 2,
-      "image": "/Image2.png",
-      "name": "Timesaving kitten to save months on development. Playful, cute, cheap!",
-      "price": 799,
-      "descr": "Eligible for nothing :("
     }
   ]
 }
