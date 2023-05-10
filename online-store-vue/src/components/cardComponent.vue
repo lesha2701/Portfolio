@@ -93,33 +93,4 @@ import axios from 'axios'
     border-radius: 5px; 
     text-align: center;
 }
-
-/* @media screen and (max-width: 1919px) {
-    .card__name {
-        width: 270px;
-    }
-}
-
-@media screen and (max-width: 1675px) {
-    .card__name {
-        width: 190px;
-        font-size: 14px;
-    }
-
-    .card__image {
-        width: 180px;
-    }
-
-    .card__descr {
-        font-size: 12px;
-    }
-
-    .card__price {
-        width: 180px;
-    }
-
-    .card__descr {
-        width: 180px;
-    }
-} */
 </style>
