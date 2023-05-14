@@ -73,6 +73,20 @@ app.delete('/cart/delete/all', (req, res) => {
     })
 })
 
+app.get('/products', (req, res) => {
+    fs.readFile(PRODUCT_DATA_FILE, (err, data) => {
+        res.setHeader('Cache-Control', 'no-cache');
+        res.json(JSON.parse(data));
+    })
+})
+
+app.get('/cart', (req, res) => {
+    fs.readFile(CART_DATA_FILE, (err, data) => {
+        res.setHeader('Cache-Control', 'no-cache');
+        res.json(JSON.parse(data));
+    })
+})
+
 app.listen(app.get('port'), () => {
     console.log(`Find the server at: http://localhost:${app.get('port')}/`)
 })
