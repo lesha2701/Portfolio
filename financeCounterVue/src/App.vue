@@ -1,8 +1,9 @@
 <script setup>
+import mainComponent from './components/mainComponent.vue';
 </script>
 
 <template>
-
+  <mainComponent />
 </template>
 
 <style scoped>
