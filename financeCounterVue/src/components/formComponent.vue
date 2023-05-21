@@ -1,9 +1,32 @@
 <template>
     <div class="form">
         <h3 class="form-title">Добавление {{ name }}</h3>
-        <input v-model="category" class="formText" type="text" placeholder="Категория">
-        <input v-model="price" class="formText" type="text" placeholder="Сумма">
-        <input v-model="date" class="formText" type="date" name="" id="">
+        <div class="form-block">
+            <label class="form-label" for="form-select">Выберите категорию</label>
+            <select v-if="name === 'расходов'" v-model.lazy="category" class="formText form-select" name="select" id="form-select">
+                <option value="Еда">Еда</option>
+                <option value="Одежда">Одежда</option>
+                <option value="Развлечение">Развлечение</option>
+                <option value="Подписки">Подписки</option>
+                <option value="Транспорт">Транспорт</option>
+                <option value="Прочее">Прочее</option>
+            </select>
+            <select v-if="name == 'доходов'" v-model.lazy="category" class="formText form-select" name="select" id="form-select">
+                <option value="Зарплата">Зарплата</option>
+                <option value="Стипендия">Стипендия</option>
+                <option value="Родители">Родители</option>
+                <option value="Подарок">Подарок</option>
+                <option value="Прочее">Прочее</option>
+            </select>
+        </div>
+        <div class="form-block">
+            <label class="form-label"  for="form-price">Введите сумму</label>
+            <input v-model="price" class="formText" type="text" placeholder="Сумма" id="form-price">
+        </div>
+        <div class="form-block">
+            <label class="form-label"  for="form-date">Выберите дату</label>
+            <input v-model="date" class="formText" type="date" name="" id="form-date">
+        </div>
         <button @click="addItem" class="formBtn">Добавить</button>
     </div>
 </template>
@@ -20,7 +43,9 @@ export default {
         return {
             category: '',
             price: '',
-            date: ''
+            date: '',
+            formLabelExp: true,
+            formLabelInc: false
         }
     },
     methods: {
@@ -54,6 +79,7 @@ export default {
         border: 1px solid #eee;
         padding: 20px;
         border-radius: 10px;
+        margin-bottom: 20px;
     }
 
     .formText {
@@ -64,6 +90,10 @@ export default {
         color: #ccc;
         transition: all .3s;
         width: 250px;
+    }
+
+    .form-select {
+        width: 100%;
     }
 
     .formText:focus {
@@ -88,5 +118,21 @@ export default {
     .form-title {
         align-self: center;
         margin-bottom: 15px;
+    }
+
+    .categoty-text {
+        color: #666;
+    }
+
+    .form-label {
+        font-size: 12px;
+        color: #666;
+    }
+
+    .form-block {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-bottom: 10px;
     }
 </style>

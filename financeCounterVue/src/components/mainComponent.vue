@@ -70,6 +70,7 @@ export default {
 
 .main-title {
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .main-distribution {
