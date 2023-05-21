@@ -56,7 +56,7 @@ export default {
                 axios.post(`http://localhost:3000/${this.link}`, {
                     id: maxIdObj.id + 1,
                     category: this.category,
-                    price: this.price,
+                    price: Number(this.price),
                     date: this.date
                 })
                 .then(response => console.log(response),
