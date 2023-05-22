@@ -11,7 +11,7 @@
             <div class="statistics-expenses statistics-block-item">
                 <p>Расходы</p>
                 <div class="allExp">
-                    <p>Общая сумма трат: {{ sum }}</p>
+                    <p>Общая сумма трат: {{ sumExp }}</p>
                 </div>
                 <div class="select-exp">
                     <p>Максимальная и минимальная трата</p>
@@ -45,8 +45,15 @@ export default {
             canSeeInfo: false,
             max: '',
             min: '',
-            sum: 0
+            sumExp: this.getSum(),
+            expenses: []
         }
+    },
+    mounted() {
+        axios.get('http://localhost:3000/expenses')
+        .then(response => {
+            this.expenses = response.data;
+        });
     },
     methods: {
         getInfo() {
@@ -63,14 +70,21 @@ export default {
             })
         },
         updateInfo() {
-            this.sum = 0
+            this.sumExp = 0
             axios
             .get(`http://localhost:3000/expenses`)
             .then(response => {
                 response.data.forEach(element => {
-                    this.sum += element.price
+                    this.sumExp += element.price
                 });
             });
+        },
+        getSum() {
+            let sum = 0;
+            this.expenses.forEach(element => {
+                sum += element.price
+            });
+            return sum;
         }
     }
 }
