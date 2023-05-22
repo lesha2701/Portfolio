@@ -45,15 +45,18 @@ export default {
             canSeeInfo: false,
             max: '',
             min: '',
-            sumExp: this.getSum(),
+            sumExp: 0,
             expenses: []
         }
     },
     mounted() {
-        axios.get('http://localhost:3000/expenses')
-        .then(response => {
-            this.expenses = response.data;
-        });
+        axios
+            .get(`http://localhost:3000/expenses`)
+            .then(response => {
+                response.data.forEach(element => {
+                    this.sumExp += element.price
+                });
+            });
     },
     methods: {
         getInfo() {
@@ -78,13 +81,6 @@ export default {
                     this.sumExp += element.price
                 });
             });
-        },
-        getSum() {
-            let sum = 0;
-            this.expenses.forEach(element => {
-                sum += element.price
-            });
-            return sum;
         }
     }
 }
