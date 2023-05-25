@@ -1,0 +1,163 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    padding: 0;
+    margin: 0;  
+}
+
+body {
+    background-color: #FFE6D7;
+    color: #826f8c;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.text {
+    font-style: normal;
+    font-weight: 500;
+    line-height: 29px;
+}
+
+.btn {
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 13px 30px;
+    background: linear-gradient(92.81deg, #4499D9 11.62%, #6E6CC1 75.39%);
+    border-radius: 25px;
+    display: inline-block;
+}
+
+.container {
+    width: 1440px;
+    margin: 0 auto;
+    padding: 0px 145px
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 55px;
+}
+
+.header__nav-items {
+    display: flex;
+    gap: 44px;
+}
+
+.header__nav-items a {
+    color: #446381;
+    line-height: 24px;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.top__left-gaming {
+    color: #446381;
+    font-size: 23px;
+    line-height: 24px;
+    margin-bottom: 26px;
+}
+
+.top__left-title {
+    color: #EB8382;
+    font-weight: 700;
+    font-size: 68px;
+    line-height: 75px;
+    margin-bottom: 30px;
+}
+
+.top__left-title span {
+    color: #446381;
+}
+
+.top__left-descr {
+    width: 518px;
+    margin-bottom: 36px;
+}
+
+.top__right {
+    position: relative;
+}
+
+.top__right-box {
+    position: absolute;
+}
+
+.box-top {
+    top: 0;
+    left: -100px;
+}
+
+.bot-bottom {
+    bottom: -40px;
+    right: -150px;
+}
+
+.top-img {
+    position: absolute;
+    width: 100%;
+    height: 85vh;
+    z-index: -1;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.new {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-top: 200px;
+}
+
+.new__img {
+    position: absolute;
+    right: 0;
+}
+
+.new__right-about {
+    color: #446381;
+    font-weight: 500;
+    font-size: 23px;
+    line-height: 24px;
+    margin-bottom: 30px;
+}
+
+.new__right-title {
+    color: #EB8382;
+    font-weight: 700;
+    font-size: 68px;
+    line-height: 75px;
+    width: 666px;
+    margin-bottom: 25px;
+}
+
+.new__right-descr {
+    width: 520px;
+    margin-bottom: 30px;
+}
