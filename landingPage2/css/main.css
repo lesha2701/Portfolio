@@ -8,6 +8,10 @@ h1, h2, h3, h4, h5, h6, p {
     padding: 0;
     margin: 0;  
 }
+html,
+body {
+    height: 100%;
+}
 
 body {
     background-color: #FFE6D7;
@@ -15,6 +19,17 @@ body {
     font-size: 18px;
     font-weight: 500;
     font-family: 'Josefin Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+}
+
+.footer__inner {
+    padding: 25px 0;
+    margin-top: auto;
 }
 
 a {
@@ -172,6 +187,7 @@ li {
 
 .xbox {
     position: relative;
+    margin-bottom: 140px;
 }
 
 .xbox__img {
@@ -211,6 +227,10 @@ li {
     left: 100px;
 }
 
+.plan {
+    margin-bottom: 80px;
+}
+
 .plan__title {
     text-align: center;
 }
@@ -228,9 +248,67 @@ li {
     font-size: 58px;
     line-height: 65px;
     color: #EB8382;
+    margin-bottom: 64px;
 }
 
 .cards {
     display: flex;
     justify-content: space-around;
+}
+
+.card__title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 32px;
+    color: #446381;
+    margin-bottom: 35px;
+}
+
+.card__price {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    color: #EB8382;
+    margin-bottom: 30px;
+}
+
+.card__price span {
+    font-size: 32px;
+}
+
+.card__item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: #FBDACF;
+    box-shadow: 0px 20px 50px rgba(132, 148, 205, 0.08);
+    border-radius: 20px;
+    padding: 36px 46px;
+}
+
+.plan__btn {
+    padding: 13px 80px 13px 54px;
+}
+
+.active {
+    background: linear-gradient(180deg, #446381 0%, #826F8C 100%);
+    color: #fff;
+}
+
+.title-active {
+    color: #fff;
+}
+
+.footer {
+    border-top: 1.5px solid #816F8C;
+}
+
+.footer__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
