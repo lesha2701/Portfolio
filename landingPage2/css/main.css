@@ -89,8 +89,20 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
+.top__cross {
+    position: absolute;
+    bottom: -30px;
+    left: 250px;
+}
+
+.top__cross2 {
+    position: absolute;
+    left: -150px;
+    top: 20%;
+}
 
 .top__left-gaming {
     color: #446381;
@@ -129,7 +141,7 @@ li {
     left: -100px;
 }
 
-.bot-bottom {
+.box-bottom {
     bottom: -40px;
     right: -150px;
 }
