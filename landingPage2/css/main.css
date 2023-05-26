@@ -131,7 +131,7 @@ li {
 
 .new {
     position: relative;
-    margin-bottom: 100px;
+    margin-bottom: 130px;
 }
 
 .new__inner {
@@ -170,6 +170,17 @@ li {
     margin-bottom: 30px;
 }
 
+.xbox {
+    position: relative;
+}
+
+.xbox__img {
+    position: absolute;
+    top: -50px;
+    width: 100%;
+    height: 75vh;
+}
+
 .xbox__inner {
     display: flex;
     align-items: center;
@@ -191,7 +202,35 @@ li {
     width: 600px;
 }
 
+.xbox__left-descr {
+    margin-bottom: 30px;
+}
+
 .xbox__right {
     position: relative;
     left: 100px;
+}
+
+.plan__title {
+    text-align: center;
+}
+
+.plan__title-descr {
+    font-weight: 500;
+    font-size: 23px;
+    line-height: 24px;
+    color: #446381;
+    margin-bottom: 33px;
+}
+
+.plan__title-text {
+    font-weight: 700;
+    font-size: 58px;
+    line-height: 65px;
+    color: #EB8382;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
 }
