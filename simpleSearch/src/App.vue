@@ -1,7 +1,6 @@
 <script setup>
   import Cars from './components/Cars.vue';
-  import searchBar from './components/searchBar.vue';
-  import {ref} from 'vue'
+  import {ref, computed} from 'vue'
 
   const cars = ref([
     {
@@ -82,12 +81,35 @@
       img: '/car7.jpg'
     }
   ])
+
+  const queryName = ref('');
+  const queryPriceMin = ref('');
+  const queryPriceMax = ref('');
+
+  const queryCars = computed(() => {
+    let c = cars.value;
+
+    if (queryName.value){
+      c = c.filter((car) => car.name.indexOf(queryName.value) !== -1)
+    } else if (queryPriceMin.value || queryPriceMax.value) {
+      c = c.filter((car) => ((car.price > queryPriceMin.value) || (car.price < queryPriceMax.value)))
+    }
+
+    return c;
+  })
+
 </script>
 
 <template>
   <div class="container">
-    <searchBar />
-    <Cars :cars="cars" />
+    <div class="search">
+        <input v-model="queryName" class="search-input" type="text" placeholder="Марка">
+        <input v-model="queryPriceMin" class="search-input" type="text" placeholder="Мин. цена">
+        <input v-model="queryPriceMax" class="search-input" type="text" placeholder="Макс. цена">
+        <input v-model="query" class="search-input" type="text" placeholder="Мин. год">
+        <input v-model="query" class="search-input" type="text" placeholder="Макс. год">
+    </div>
+    <Cars :cars="queryCars" />
   </div>
 </template>
 
@@ -106,4 +128,23 @@
     width: 60%;
     margin: 0 auto;
   }
+
+  .search {
+        padding: 20px;
+        background-color: #e6e6e6;
+        width: auto;
+        margin: 20px 0;
+        border-radius: 12px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .search-input {
+        background-color: transparent;
+        outline: none;
+        border: none;
+        background-color: #f0efef;
+        padding: 10px;
+    }
+
 </style>

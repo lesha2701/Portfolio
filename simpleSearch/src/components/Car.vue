@@ -29,11 +29,11 @@ const props = defineProps({
     border-radius: 12px;
     transition: all 0.2s;
     padding: 20px;
-    border-top: 1px solid #ededed;
+    border-top: 1px solid #e6e6e6;
 }
 
 .car:hover {
-    background-color: #ededed;
+    background-color: #eeeeee;
 }
 
 .car-info {
