@@ -1,10 +1,20 @@
-<script setup>
+<script>
 import { defineProps} from 'vue';
 import Car from './Car.vue';
 
-const props = defineProps({
-    cars: Array
-})
+export default {
+    data() {
+        return {
+
+        }
+    },
+    props: {
+        cars: Array
+    },
+    components: {
+        Car
+    }
+}
 </script>
 
 <template>

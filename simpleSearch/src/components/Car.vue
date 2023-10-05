@@ -1,9 +1,9 @@
-<script setup>
-import { defineProps } from 'vue';
-
-const props = defineProps({
-    car: Object
-})
+<script>
+export default {
+    props: {
+        car: Object
+    }
+}
 </script>
 
 <template>
