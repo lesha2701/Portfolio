@@ -64,6 +64,13 @@
       "name": "Vintage Typewriter to post awesome stories about UI design and webdev.",
       "price": 49.5,
       "descr": "Eligible for Shipping To Mars or somewhere else"
+    },
+    {
+      "id": 2,
+      "image": "/Image.png",
+      "name": "Vintage Typewriter to post awesome stories about UI design and webdev.",
+      "price": 49.5,
+      "descr": "Eligible for Shipping To Mars or somewhere else"
     }
   ]
 }
